@@ -18,7 +18,7 @@ The last part of the channel manifest (lines 12 and 13) declare the `sdk_instant
 
 ## Suspend and resume handlers
 
-The **videoPlayerLogic.brs** file includes `onMainSceneSuspend` and `onMainSceneResume` callback functions for when the channel is suspended from a channel exit and resumed after a channel exit, respectively. These callback functions are defined in the `MainScene.XML` component. 
+The **videoPlayerLogic.brs** file includes `onMainSceneSuspend` and `onMainSceneResume` callback functions for when the channel is suspended and resumed from a channel exit, respectively. These callback functions are defined in the `MainScene.XML` component. 
 
 - **onMainSceneSuspend**. When the channel is suspended after being exited, this callback function checks whether the channel was exited because the Home button was pressed on the Roku remote control. If the Home button was pressed and the viewer was watching content, they are returned to the Details sceen upon the relaunching the channel. The user can the resume playback or start watching from the beginning. 
 
