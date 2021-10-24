@@ -22,7 +22,7 @@ The **videoPlayerLogic.brs** file includes `onMainSceneSuspend` and `onMainScene
 
 - **onMainSceneSuspend**. When the channel is suspended after being exited, this callback function checks whether the channel was exited because the Home button was pressed on the Roku remote control. If the Home button was pressed and the viewer was watching content, they are returned to the Details sceen upon the relaunching the channel. The user can the resume playback or start watching from the beginning. 
 
-- **onMainSceneResume**. When the channel is resumed, this callback function checks whether it recevied any launch parameters. If so, the channel [deeplinks](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) into the content specified by the `contentId` using the launch behavior required by the specified `mediaType`.
+- **onMainSceneResume**. When the channel is resumed, this callback function checks whether it recevied any launch parameters. If so, the channel [deeplinks](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) into the content specified by the `contentId` using the launch behavior required by the specified `mediaType`.
 
 ## Signal beacons
 
