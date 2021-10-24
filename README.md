@@ -24,19 +24,6 @@ The **videoPlayerLogic.brs** file includes `onMainSceneSuspend` and `onMainScene
 
 - **onMainSceneResume**. When the channel is resumed, this callback function checks whether it recevied any launch parameters. If so, the channel deeplinks into the content specified by the `contentId` using the launch behavior required by the specified `mediaType`.
 
-
-' Callback function when the channel resumes after a channel exit. In this example, the channel will .
-sub onMainSceneResume(args as dynamic)
-    print "***** Resuming Channel *****"
-    print "Args passed into resume callback: "; args
-    if args.doesExist("launchParams")
-        if args.launchParams.contentId <> invalid and args.launchParams.mediaType <> invalid
-            DeepLink(m.contentTask.content, args.launchParams.mediaType, args.launchParams.contentId)
-        end if
-    end if
-    myScene = m.top.getScene()
-    myScene.signalBeacon("AppResumeComplete")
-end sub
-
-
 ## Signal beacons
+
+The `onMainSceneResume` callback function in the **videoPlayerLogic.brs** file fires the **AppResumeComplete** beacon. This beacon must be fired when the suspended scene is fully rendered during the resume process and when video playback starts after handling a [deep link](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md), once the channel can respond to commands sent via the Roku remote control.
